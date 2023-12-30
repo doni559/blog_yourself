@@ -1,0 +1,125 @@
+.login{
+    float: left;
+    width: 30%;
+    margin-left: 38%;
+}
+.login form{
+    float: left;
+    width: 100%;
+    background-color: rgb(226, 226, 226);
+    border-radius: 5% 5%;
+    height: 50vh;
+    display: block;
+}
+.login h1{
+    text-align: center;
+}
+.login label:first-of-type{
+    margin-top: 10%;
+    font-size: 20px;
+    
+}
+
+.login label:not(:first-of-type){
+    font-size: 20px;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+.login button{
+    padding-bottom: 35px;
+    width: 50%;
+    height: 10%;
+    transition: transform 200ms ease-in-out;
+    margin-top: 45%;
+}
+
+.login button:hover{
+    transform: scale(1.1);
+}
+
+.login .errorlist{
+    display: none;
+}
+
+.profile_name{
+    background-color: rgb(95, 169, 255);
+    border-radius: 10%;
+    border: 4px double rgb(0, 0, 0);
+    float:left;
+    width: 20%;
+    color: white;
+    height: 12vh;
+    text-shadow: 1px 1px 1px black;
+    margin-left: 3%;
+
+}
+.profile_name p{
+    margin-left: 30%;
+}
+
+.profile_info{
+    float: right;
+    background-color: rgb(95, 169, 255);
+    border-radius: 10%;
+    border: 4px double black;
+    width: 30%;
+    height: 80vh;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.profile_info #status{
+    text-align: center;
+    font-size: 30px;
+}
+
+.profile_info #about{
+    text-align: left;
+    font-size: 26px;
+}
+.profile_edit button{
+    text-shadow: 1px 1px 1px black;
+}
+
+.profile_edit #edit{
+    margin-top: 50%;
+    float: left;
+    margin-left: -20%;
+    transition: transform 200ms ease-in-out;
+}
+.profile_edit #quit{
+    margin-top: 50%;
+    text-shadow: 1px 1px 1px black;
+    margin-left: -3%;
+    float: left;
+    transition: transform 200ms ease-in-out;
+}
+
+.profile_edit #add_article{
+    margin-top: 50%;
+    float: right;
+    margin-right: -20%;
+    transition: transform 200ms ease-in-out;
+}
+.profile_edit button:hover{
+    transform: scale(1.05);
+
+}
+
+
+.edit{
+    width: 25%;
+    height: 80vh;
+    margin-left: 40%;
+    margin-top: 5%;
+    
+}
+.edit button{
+    margin-top: 5%;
+}
+
+.edit .form-control:last-of-type{
+    height: 30vh;
+}

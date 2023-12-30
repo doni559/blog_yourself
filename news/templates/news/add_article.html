@@ -1,0 +1,26 @@
+{%extends 'main/layout.html'%}
+
+{%block title%}
+Добавление статьи
+{%endblock%}
+
+
+{% block body %}
+<div class = 'features'>
+    <form method = "post" action="">
+        {% csrf_token%}
+        <h1>Добавление статьи</h1>
+        {{form.title}}
+        {{form.anounce}}
+        {{form.full_text}}
+        <input type="hidden" name="date" class="form-control" placeholder="Дата публикации" required="" id="id_date" value="{{date.year}}-{{date.month}}-{{date.day}}">
+        <input type="hidden" name="user" class="form-control" placeholder="Пользователь" id="id_user" value="{{user}}">
+
+        <button type="submit" class = "btn btn-success">Добавить</button>
+
+        <br>
+        <span>{{error}}</span>
+    </form>
+
+</div>
+{% endblock %}

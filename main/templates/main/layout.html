@@ -1,0 +1,45 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="{%static 'main/css/main.css'%}">
+    <link rel="stylesheet" href="{%static 'news/css/news.css'%}">
+    <link rel="stylesheet" href="{%static 'user/css/user.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4b072fc9ee.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/images/logo.png' %}"/>
+</head>
+<body>
+    <header>
+        <img src="{%static 'main/images/logo.png'%}" class = "logo" alt="logo">
+        <span class = "title">LOG YOURSELF</span>
+        {%if auth == False%}
+            <div class="profile_login">
+                <a href="{%url 'login'%}"><button type="button" class="btn btn-success">Залогиниться</button></a>
+                <a href="{%url 'register'%}"><button type="button" class="btn btn-primary">Регистрация</button></a>
+            </div>
+        {%else%}
+            <div class="profile">
+                <a href="{%url 'your_profile' user%}" class="btn btn-primary"><h1>{{user}}</h1></a>
+            </div>
+        {%endif%}
+    </header>
+    <aside>
+        <p>Навигация по сайту</p>
+        <ul>
+            <a href="{%url 'home'%}"><li><i class="fa-solid fa-house"></i> Главная</li></a>
+            <a href="{%url 'about'%}"><li><i class="fa-solid fa-question fa-lg"></i> О нас</li></a>
+            <br>
+            <a href="{%url 'news_home' 1%}"><li><i class="fa-solid fa-newspaper"></i> Смотреть статьи</li></a>
+        </ul>
+    </aside>
+
+    <main>{%block body%}
+    {%endblock%}
+    </main>
+</body>
+</html>

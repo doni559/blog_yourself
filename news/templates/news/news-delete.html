@@ -1,0 +1,20 @@
+{%extends 'main/layout.html'%}
+
+{%block title%}
+Редактирование статьи
+{%endblock%}
+
+
+{% block main %}
+<div class = 'features'>
+    <form method = "post" action="">
+        {% csrf_token%}
+        <h1>Вы уверены, что хотите удалить статью?</h1>
+        <button type="submit" class = "btn btn-success">Удалить статью</button>
+
+        <br>
+        <span>{{error}}</span>
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{%load static%}
+
+{%block title%}Удаление статьи {{article.title}}{%endblock%}
+
+{%block body%}
+
+   <div class="detail_article">
+    <i class="fa-solid fa-thumbtack fa-2xl" style="color: #c50202;"></i>
+
+        <h1>Вы уверены, что хотите удалить статью "{{article.title}}"?</h1>
+        <a href="{%url 'news-delete-delete' article.id%}"><button type="button" class="btn btn-danger" id="accept">Удалить</button></a><br>
+        <a href="{%url 'news-delete-cancel' article.id%}"><button type="button" class="btn btn-success" id="cancel">Отмена</button></a>
+   </div>
+{%endblock%}

@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{%load static%}
+
+{%block title%}О нас{%endblock%}
+
+{%block body%}
+    <h1>Это страница про нас!</h1>
+    <div>
+        <p>Разработан сайт одним разработчиком, создан для общения и написания статей. 
+        </p>
+        <img src="{%static 'main/images/about_filler.jpg'%}" alt="filler" class="filler">
+        <p>Приятного пользования! <i class="fa-solid fa-heart" style="color: #ff0000;"></i></p>
+        
+    </div>
+{%endblock%}

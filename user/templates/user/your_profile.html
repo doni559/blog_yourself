@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{%load static%}
+
+{%block title%}Профиль {{profile.username}}{%endblock%}
+
+{%block body%}
+    <div class="your_profile">
+        <div class="profile_name">
+            <label for="username">Имя пользователя</label><br>
+            <p name="username">{{profile.username}}</p>
+        </div>
+        <div class="profile_info">
+            <label for="status">Статус</label><br>
+            <p name="status" id="status">{{profile.status}}</p><br><br>
+
+            <label for="about">Обо мне</label><br>
+            <p name="about" id="about">{{profile.about}}</p><br><br>
+            
+        </div><br><br>
+        {%if profile.username == user.username%}
+        <div class="profile_edit">
+            <a href="{%url 'edit_profile' profile.username%}"><button type="button" class="btn btn-primary" id="edit">Редактировать профиль</button></a>
+            <a href="{%url 'quit'%}"><button type="button" class="btn btn-danger" id="quit">Выйти из аккаунта</button></a>
+            <a href="{%url 'add_article'%}"><button type="button" class="btn btn-success" id="add_article">Добавить статью</button></a>
+        </div>
+        {%endif%}
+    </div>
+{%endblock%}

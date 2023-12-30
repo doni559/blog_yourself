@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+{%load static%}
+
+{%block title%}Главная{%endblock%}
+
+{%block body%}
+    <h1>Привет!</h1>
+    <h2>Это главная страница нашего блога! </h2>
+    <div>
+        <p>     Здесь будут публиковаться статьи на разные темы, каждому что-нибудь приглянется!
+        Для подробной информации воспользуйтесь боковой панелью для навигации!
+        </p>
+        <img src="{%static 'main/images/logo.png'%}" class = "logo_main" alt="logo">
+        
+    </div>
+{%endblock%}

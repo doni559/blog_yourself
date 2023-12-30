@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+{%load static%}
+
+{%block title%}Редактировать профиль{%endblock%}
+
+{%block body%}
+    <div class="edit">
+        <h2>Редактировать профиль</h2>
+        <form method="post">
+            {%csrf_token%}
+            {{form.status}}
+            {{form.about}}
+            <button type="submit" class="btn btn-success">Изменить</button>
+        </form>
+    </div>
+{%endblock%}

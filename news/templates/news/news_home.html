@@ -1,0 +1,41 @@
+{% extends 'main/layout.html' %}
+{%load static%}
+
+{%block title%}Новости{%endblock%}
+
+{%block body%}
+    <h1>Новостная страница</h1>
+    <div class="main_articles">
+        {%if page != 1%}
+            <a href="{%url 'news_home' prev_page%}" class="prev"><button type="button" class="btn btn-info">Предыдущая страница</button></a>
+        {%endif%}
+        {%if page < max_page%}
+            <a href="{%url 'news_home' next_page%}" class="next"><button type="button" class="btn btn-info">Следующая страница</button></a>
+        {%endif%}
+        <div class ="articles">
+            {%if news%}
+                {%for i in news%}
+                    <a href="{%url 'detail_view' i.id%} ">
+                    <div class="article">
+                        <i class="fa-solid fa-thumbtack fa-2xl" style="color: #c50202;"></i>
+
+                        <h1>{{i.title}}</h1>
+                        <h3>{{i.anounce}}</h3>
+                        <div style="overflow: hidden;">{{i.full_text}}</div>
+                        <p id="user">{{i.user}}</p>
+                        <p id="date">{{i.date}}</p>
+                    </div>
+                    </a>
+                {%endfor%}
+            {%else%}
+                <div class="no_art">У вас нет новостей</div>
+            {%endif%}
+        </div>
+        {%if page < max_page%}
+            {%if page != 1%}
+                <a href="{%url 'news_home' prev_page%}" class="prev"><button type="button" class="btn btn-info">Предыдущая страница</button></a>
+            {%endif%}
+                <a href="{%url 'news_home' next_page%}" class="next"><button type="button" class="btn btn-info">Следующая страница</button></a>
+        {%endif%}
+    </div>
+{%endblock%}

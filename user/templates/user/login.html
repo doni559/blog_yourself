@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+{%load static%}
+
+{%block title%}Логин{%endblock%}
+
+{%block body%}
+    <div class="login">
+        <h2>Логин</h2>
+        <form method="post">
+            {%csrf_token%}
+            <label for="nickname">Никнейм</label>
+            {{form.nickname}}
+            <br>
+            <label for="password">Пароль</label>
+            {{form.password}}
+            <br>
+            <button type="submit" class="btn btn-success">Авторизоваться</button>
+        </form>
+    </div>
+{%endblock%}
